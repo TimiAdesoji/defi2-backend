@@ -21,3 +21,7 @@ $ cp .env.example .env
 # watch mode
 $ npm run start:dev
 ```
+
+# fetch urls
+$ http://localhost:3000/supply/eth
+$ http://localhost:3000/supply/dai
