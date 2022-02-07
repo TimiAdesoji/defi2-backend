@@ -1,4 +1,4 @@
-# Starter template for DeFiWeb2 Backend Task
+#  DeFiWeb2 Backend
 
 ## Installation
 
