@@ -17,12 +17,9 @@ export const generateUniqueId = (
   return `${address}-${timestamp}`;
 };
 
-export const getMintEventsQuery = (
-  blockTime_gte: number,
-  blockTime_lte: number,
-) => `
+export const getMintEventsQuery = (startTime: number, endTime: number) => `
   query {
-    mintEvents(where: {cTokenSymbol_in:["cDAI","cETH"],blockTime_gte: ${blockTime_gte},blockTime_lte: ${blockTime_lte}}) {
+    mintEvents(where: {cTokenSymbol_in:["cDAI","cETH"],blockTime_gte: ${startTime},blockTime_lte: ${endTime}}) {
       id
       amount
       to
@@ -34,12 +31,9 @@ export const getMintEventsQuery = (
     }
   }`;
 
-export const getRedeemEventsQuery = (
-  blockTime_gte: number,
-  blockTime_lte: number,
-) => `
+export const getRedeemEventsQuery = (startTime: number, endTime: number) => `
   query {
-    redeemEvents(where: {cTokenSymbol_in:["cDAI","cETH"],blockTime_gte: ${blockTime_gte},blockTime_lte: ${blockTime_lte}}) {
+    redeemEvents(where: {cTokenSymbol_in:["cDAI","cETH"],blockTime_gte: ${startTime},blockTime_lte: ${endTime}}) {
       id
       amount
       to
